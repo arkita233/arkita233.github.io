@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>二叉树 | 星の彼方へ</title><meta name="description" content="遍历模板-递归 &#x2F;**  * Definition for a binary tree node.  * struct TreeNode {  *     int val;  *     TreeNode *left;  *     TreeNode *right;  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}  *"><meta name="keywords" content="数据结构"><meta name="author" content="アムネシア,sixiang.zhang@tufts.edu"><meta name="copyright" content="アムネシア"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/arkita233/CDN@1.3/img/cover/2.jpg"><link rel="canonical" href="https://hosimati-kanata.com/post/2a0c.html"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><meta property="og:type" content="article"><meta property="og:title" content="二叉树"><meta property="og:url" content="https://hosimati-kanata.com/post/2a0c.html"><meta property="og:site_name" content="星の彼方へ"><meta property="og:description" content="遍历模板-递归 &#x2F;**  * Definition for a binary tree node.  * struct TreeNode {  *     int val;  *     TreeNode *left;  *     TreeNode *right;  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}  *"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/arkita233/CDN/img/cover/EbwdTmxVcAAWYST.png"><meta property="article:published_time" content="2020-07-24T04:09:34.000Z"><meta property="article:modified_time" content="2020-07-24T07:13:34.030Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>二叉树 | 星の彼方へ</title><meta name="description" content="遍历模板-递归 &#x2F;**  * Definition for a binary tree node.  * struct TreeNode {  *     int val;  *     TreeNode *left;  *     TreeNode *right;  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}  *"><meta name="keywords" content="数据结构"><meta name="author" content="アムネシア,sixiang.zhang@tufts.edu"><meta name="copyright" content="アムネシア"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/arkita233/CDN@1.3/img/cover/2.jpg"><link rel="canonical" href="https://hosimati-kanata.com/post/2a0c.html"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><meta property="og:type" content="article"><meta property="og:title" content="二叉树"><meta property="og:url" content="https://hosimati-kanata.com/post/2a0c.html"><meta property="og:site_name" content="星の彼方へ"><meta property="og:description" content="遍历模板-递归 &#x2F;**  * Definition for a binary tree node.  * struct TreeNode {  *     int val;  *     TreeNode *left;  *     TreeNode *right;  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}  *"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/arkita233/CDN/img/cover/EbwdTmxVcAAWYST.png"><meta property="article:published_time" content="2020-07-24T04:09:34.000Z"><meta property="article:modified_time" content="2020-07-26T03:10:57.753Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
   document.documentElement.setAttribute('data-theme', 'dark')
   if (document.querySelector('meta[name="theme-color"]') !== null) {
     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
@@ -102,7 +102,7 @@ if (autoChangeMode === '1') {
 .justified-gallery img{
   opacity: 1
 }
-</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/arkita233/CDN@1.3/img/cover/2.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">22</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">4</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#遍历模板-递归"><span class="toc-number">1.</span> <span class="toc-text"> 遍历模板-递归</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#是否存在一个路径让节点之和某一值"><span class="toc-number">2.</span> <span class="toc-text"> 是否存在一个路径，让节点之和&#x3D;某一值</span></a></li></ol></div></div></div><div class="code-close" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/arkita233/CDN/img/cover/EbwdTmxVcAAWYST.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">星の彼方へ</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">二叉树</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-07-23 23:09:34 23:09:34"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-07-23 23:09:34</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-07-24 02:13:34 02:13:34"><i class="fas fa-history fa-fw"></i> 更新于 2020-07-24 02:13:34</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">186</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 1 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="遍历模板-递归"><a class="markdownIt-Anchor" href="#遍历模板-递归"></a> 遍历模板-递归</h1>
+</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/arkita233/CDN@1.3/img/cover/2.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">22</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">4</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#遍历模板-递归"><span class="toc-number">1.</span> <span class="toc-text"> 遍历模板-递归</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#938-e-range-sum-of-bst是否存在一个路径让节点之和某一值"><span class="toc-number">2.</span> <span class="toc-text"> 938 E Range Sum of BST是否存在一个路径，让节点之和&#x3D;某一值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#617-e-merge-two-binary-trees-合并两棵树-值相加"><span class="toc-number">3.</span> <span class="toc-text"> 617 E Merge Two Binary Trees 合并两棵树 - 值相加</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#700-e-search-in-a-binary-search-tree搜索值返回节点"><span class="toc-number">4.</span> <span class="toc-text"> 700  E Search in a Binary Search Tree搜索值，返回节点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#589-e-n-ary-tree-preorder-traversal-n叉树前序遍历"><span class="toc-number">5.</span> <span class="toc-text"> 589  E N-ary Tree Preorder Traversal    N叉树前序遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#递归"><span class="toc-number">5.1.</span> <span class="toc-text"> 递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stack-版"><span class="toc-number">5.2.</span> <span class="toc-text"> stack 版</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#590-e-n-ary-tree-postorder-traversal-n叉树后序遍历"><span class="toc-number">6.</span> <span class="toc-text"> 590 E N-ary Tree Postorder Traversal N叉树后序遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#递归-2"><span class="toc-number">6.1.</span> <span class="toc-text"> 递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stack-版-2"><span class="toc-number">6.2.</span> <span class="toc-text"> stack 版</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#897-e-increasing-order-search-tree-中序遍历"><span class="toc-number">7.</span> <span class="toc-text"> 897. E Increasing Order Search Tree 中序遍历</span></a></li></ol></div></div></div><div class="code-close" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/arkita233/CDN/img/cover/EbwdTmxVcAAWYST.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">星の彼方へ</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">二叉树</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-07-23 23:09:34 23:09:34"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-07-23 23:09:34</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-07-25 22:10:57 22:10:57"><i class="fas fa-history fa-fw"></i> 更新于 2020-07-25 22:10:57</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">778</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 4 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="遍历模板-递归"><a class="markdownIt-Anchor" href="#遍历模板-递归"></a> 遍历模板-递归</h1>
 <pre class="highlight"><code class="C"><span class="hljs-comment">/**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -133,7 +133,7 @@ if (autoChangeMode === '1') {
     
 };
 </code></pre>
-<h1 id="是否存在一个路径让节点之和某一值"><a class="markdownIt-Anchor" href="#是否存在一个路径让节点之和某一值"></a> 是否存在一个路径，让节点之和=某一值</h1>
+<h1 id="938-e-range-sum-of-bst是否存在一个路径让节点之和某一值"><a class="markdownIt-Anchor" href="#938-e-range-sum-of-bst是否存在一个路径让节点之和某一值"></a> 938 E Range Sum of BST是否存在一个路径，让节点之和=某一值</h1>
 <pre class="highlight"><code class="C"><span class="hljs-comment">/**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -160,6 +160,259 @@ if (autoChangeMode === '1') {
         <span class="hljs-keyword">return</span> hasPathSum(root-&gt;left,sum) || hasPathSum(root-&gt;right,sum);
         
 
+        
+    }
+};
+</code></pre>
+<h1 id="617-e-merge-two-binary-trees-合并两棵树-值相加"><a class="markdownIt-Anchor" href="#617-e-merge-two-binary-trees-合并两棵树-值相加"></a> 617 E Merge Two Binary Trees 合并两棵树 - 值相加</h1>
+<pre class="highlight"><code class="c++"><span class="hljs-comment">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> {</span>
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function">TreeNode* <span class="hljs-title">mergeTrees</span><span class="hljs-params">(TreeNode* t1, TreeNode* t2)</span> </span>{
+        
+        <span class="hljs-keyword">if</span>(t1 &amp;&amp; t2){
+            t1-&gt;val+=t2-&gt;val;
+            t1-&gt;left = mergeTrees(t1-&gt;left,t2-&gt;left);
+            t1-&gt;right = mergeTrees(t1-&gt;right,t2-&gt;right);
+            <span class="hljs-keyword">return</span> t1;
+        }
+        <span class="hljs-keyword">else</span>
+            <span class="hljs-keyword">return</span> t1?t1:t2;
+        
+    }
+};
+</code></pre>
+<h1 id="700-e-search-in-a-binary-search-tree搜索值返回节点"><a class="markdownIt-Anchor" href="#700-e-search-in-a-binary-search-tree搜索值返回节点"></a> 700  E Search in a Binary Search Tree搜索值，返回节点</h1>
+<pre class="highlight"><code class="c++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> {</span>
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function">TreeNode* <span class="hljs-title">searchBST</span><span class="hljs-params">(TreeNode* root, <span class="hljs-keyword">int</span> val)</span> </span>{
+        
+        <span class="hljs-keyword">if</span>(root){
+        
+        <span class="hljs-keyword">if</span>(root-&gt;val == val)
+            <span class="hljs-keyword">return</span> root;
+        
+        <span class="hljs-keyword">if</span>(val &lt; root-&gt;val)
+            <span class="hljs-keyword">return</span> searchBST(root-&gt;left,val);
+        <span class="hljs-keyword">if</span>(val &gt; root-&gt;val)
+            <span class="hljs-keyword">return</span> searchBST(root-&gt;right,val);
+        }
+        
+        
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;
+        
+        
+    }
+};
+</code></pre>
+<h1 id="589-e-n-ary-tree-preorder-traversal-n叉树前序遍历"><a class="markdownIt-Anchor" href="#589-e-n-ary-tree-preorder-traversal-n叉树前序遍历"></a> 589  E N-ary Tree Preorder Traversal    N叉树前序遍历</h1>
+<h2 id="递归"><a class="markdownIt-Anchor" href="#递归"></a> 递归</h2>
+<pre class="highlight"><code class="c++"><span class="hljs-comment">/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    vector&lt;Node*&gt; children;
+
+    Node() {}
+
+    Node(int _val) {
+        val = _val;
+    }
+
+    Node(int _val, vector&lt;Node*&gt; _children) {
+        val = _val;
+        children = _children;
+    }
+};
+*/</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> {</span>
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">helper</span><span class="hljs-params">(Node* root, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; v)</span>
+    </span>{
+        <span class="hljs-keyword">if</span>(!root){<span class="hljs-keyword">return</span>;}
+        
+        
+        v.push_back(root-&gt;val);
+        
+
+        
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;root-&gt;children.<span class="hljs-built_in">size</span>();i++)
+        {
+            helper(root-&gt;children[i],v);
+
+
+        }
+            
+               
+    }
+        
+    
+    
+    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">preorder</span><span class="hljs-params">(Node* root)</span> </span>{
+        
+        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; res;
+        helper(root,res);
+        
+        <span class="hljs-keyword">return</span> res;
+        
+    }
+};
+</code></pre>
+<h2 id="stack-版"><a class="markdownIt-Anchor" href="#stack-版"></a> stack 版</h2>
+<pre class="highlight"><code class="c++">    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">preorder</span><span class="hljs-params">(Node* root)</span> </span>{
+        
+        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; res;
+        <span class="hljs-built_in">stack</span>&lt;Node*&gt; s;
+        
+        <span class="hljs-keyword">if</span>(!root){<span class="hljs-keyword">return</span> res;}
+        
+        s.push(root);
+        
+        <span class="hljs-keyword">while</span>(!s.empty())
+        {
+            Node* tmp = s.top();
+            s.pop();
+            res.push_back(tmp-&gt;val);
+            
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=tmp-&gt;children.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>; i&gt;=<span class="hljs-number">0</span>;i--)
+                s.push(tmp-&gt;children[i]);
+                
+        }
+        
+        <span class="hljs-keyword">return</span> res;
+        
+    }
+</code></pre>
+<h1 id="590-e-n-ary-tree-postorder-traversal-n叉树后序遍历"><a class="markdownIt-Anchor" href="#590-e-n-ary-tree-postorder-traversal-n叉树后序遍历"></a> 590 E N-ary Tree Postorder Traversal N叉树后序遍历</h1>
+<h2 id="递归-2"><a class="markdownIt-Anchor" href="#递归-2"></a> 递归</h2>
+<pre class="highlight"><code class="c++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> {</span>
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">helper</span><span class="hljs-params">(Node* root, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; v)</span>
+    </span>{
+        <span class="hljs-keyword">if</span>(!root){<span class="hljs-keyword">return</span>;}
+        
+        
+        <span class="hljs-keyword">if</span>(root-&gt;children.<span class="hljs-built_in">size</span>()==<span class="hljs-number">0</span>){ v.push_back(root-&gt;val);}
+        
+        <span class="hljs-keyword">else</span>{
+        
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;root-&gt;children.<span class="hljs-built_in">size</span>();i++)
+                {
+                    helper(root-&gt;children[i],v);
+
+
+                }
+            
+                v.push_back(root-&gt;val);
+            }
+        
+    }
+    
+    
+    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">postorder</span><span class="hljs-params">(Node* root)</span> </span>{
+        
+        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; res;
+        helper(root,res);
+        
+        <span class="hljs-keyword">return</span> res;
+    }
+};
+</code></pre>
+<h2 id="stack-版-2"><a class="markdownIt-Anchor" href="#stack-版-2"></a> stack 版</h2>
+<pre class="highlight"><code class="c++">    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">postorder</span><span class="hljs-params">(Node* root)</span> </span>{
+        
+        <span class="hljs-keyword">if</span>(!root){<span class="hljs-keyword">return</span> <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;();}
+        
+        <span class="hljs-built_in">stack</span>&lt;Node*&gt; s;
+        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; res;
+        
+        s.push(root);
+        
+        <span class="hljs-keyword">while</span>(!s.empty())
+        {
+            
+            Node* tmp = s.top();
+            
+            res.push_back(tmp-&gt;val);
+            
+            s.pop();
+            
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">-0</span>;i&lt;tmp-&gt;children.<span class="hljs-built_in">size</span>();i++)
+                s.push(tmp-&gt;children[i]);
+            
+            
+                
+        }
+        
+        reverse(res.<span class="hljs-built_in">begin</span>(),res.<span class="hljs-built_in">end</span>());
+        
+        <span class="hljs-keyword">return</span> res;
+        
+    }
+</code></pre>
+<h1 id="897-e-increasing-order-search-tree-中序遍历"><a class="markdownIt-Anchor" href="#897-e-increasing-order-search-tree-中序遍历"></a> 897. E Increasing Order Search Tree 中序遍历</h1>
+<pre class="highlight"><code class="c++"><span class="hljs-comment">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> {</span>
+<span class="hljs-keyword">public</span>:
+    TreeNode* res;
+    TreeNode* cur;
+    
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">helper</span><span class="hljs-params">(TreeNode* root)</span>
+    </span>{
+        
+        <span class="hljs-keyword">if</span>(!root){<span class="hljs-keyword">return</span>;}
+        
+        
+    
+        
+        helper(root-&gt;left);
+        
+        
+        <span class="hljs-keyword">if</span>(!res)
+        {
+            res = <span class="hljs-keyword">new</span> TreeNode(root-&gt;val);
+            cur = res;
+        }
+        <span class="hljs-keyword">else</span>
+        {
+            cur-&gt;right = <span class="hljs-keyword">new</span> TreeNode(root-&gt;val);
+            cur = cur-&gt;right;
+        }
+
+        helper(root-&gt;right);
+    }
+    
+    <span class="hljs-function">TreeNode* <span class="hljs-title">increasingBST</span><span class="hljs-params">(TreeNode* root)</span> </span>{
+        
+        <span class="hljs-keyword">if</span>(!root){<span class="hljs-keyword">return</span> root;}
+        
+        
+        
+        helper(root);
+        
+        <span class="hljs-keyword">return</span> res;
         
     }
 };
