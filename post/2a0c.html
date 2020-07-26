@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>二叉树 | 星の彼方へ</title><meta name="description" content="遍历模板-递归 &#x2F;**  * Definition for a binary tree node.  * struct TreeNode {  *     int val;  *     TreeNode *left;  *     TreeNode *right;  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}  *"><meta name="keywords" content="数据结构"><meta name="author" content="アムネシア,sixiang.zhang@tufts.edu"><meta name="copyright" content="アムネシア"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/arkita233/CDN@1.3/img/cover/2.jpg"><link rel="canonical" href="https://hosimati-kanata.com/post/2a0c.html"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><meta property="og:type" content="article"><meta property="og:title" content="二叉树"><meta property="og:url" content="https://hosimati-kanata.com/post/2a0c.html"><meta property="og:site_name" content="星の彼方へ"><meta property="og:description" content="遍历模板-递归 &#x2F;**  * Definition for a binary tree node.  * struct TreeNode {  *     int val;  *     TreeNode *left;  *     TreeNode *right;  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}  *"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/arkita233/CDN/img/cover/EbwdTmxVcAAWYST.png"><meta property="article:published_time" content="2020-07-24T04:09:34.000Z"><meta property="article:modified_time" content="2020-07-26T03:10:57.753Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>二叉树 | 星の彼方へ</title><meta name="description" content="遍历模板-递归 &#x2F;**  * Definition for a binary tree node.  * struct TreeNode {  *     int val;  *     TreeNode *left;  *     TreeNode *right;  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}  *"><meta name="keywords" content="数据结构"><meta name="author" content="アムネシア,sixiang.zhang@tufts.edu"><meta name="copyright" content="アムネシア"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/arkita233/CDN@1.3/img/cover/2.jpg"><link rel="canonical" href="https://hosimati-kanata.com/post/2a0c.html"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><meta property="og:type" content="article"><meta property="og:title" content="二叉树"><meta property="og:url" content="https://hosimati-kanata.com/post/2a0c.html"><meta property="og:site_name" content="星の彼方へ"><meta property="og:description" content="遍历模板-递归 &#x2F;**  * Definition for a binary tree node.  * struct TreeNode {  *     int val;  *     TreeNode *left;  *     TreeNode *right;  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}  *"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/arkita233/CDN/img/cover/EbwdTmxVcAAWYST.png"><meta property="article:published_time" content="2020-07-24T04:09:34.000Z"><meta property="article:modified_time" content="2020-07-26T06:23:33.077Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
   document.documentElement.setAttribute('data-theme', 'dark')
   if (document.querySelector('meta[name="theme-color"]') !== null) {
     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
@@ -102,7 +102,7 @@ if (autoChangeMode === '1') {
 .justified-gallery img{
   opacity: 1
 }
-</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/arkita233/CDN@1.3/img/cover/2.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">22</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">4</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#遍历模板-递归"><span class="toc-number">1.</span> <span class="toc-text"> 遍历模板-递归</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#938-e-range-sum-of-bst是否存在一个路径让节点之和某一值"><span class="toc-number">2.</span> <span class="toc-text"> 938 E Range Sum of BST是否存在一个路径，让节点之和&#x3D;某一值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#617-e-merge-two-binary-trees-合并两棵树-值相加"><span class="toc-number">3.</span> <span class="toc-text"> 617 E Merge Two Binary Trees 合并两棵树 - 值相加</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#700-e-search-in-a-binary-search-tree搜索值返回节点"><span class="toc-number">4.</span> <span class="toc-text"> 700  E Search in a Binary Search Tree搜索值，返回节点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#589-e-n-ary-tree-preorder-traversal-n叉树前序遍历"><span class="toc-number">5.</span> <span class="toc-text"> 589  E N-ary Tree Preorder Traversal    N叉树前序遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#递归"><span class="toc-number">5.1.</span> <span class="toc-text"> 递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stack-版"><span class="toc-number">5.2.</span> <span class="toc-text"> stack 版</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#590-e-n-ary-tree-postorder-traversal-n叉树后序遍历"><span class="toc-number">6.</span> <span class="toc-text"> 590 E N-ary Tree Postorder Traversal N叉树后序遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#递归-2"><span class="toc-number">6.1.</span> <span class="toc-text"> 递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stack-版-2"><span class="toc-number">6.2.</span> <span class="toc-text"> stack 版</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#897-e-increasing-order-search-tree-中序遍历"><span class="toc-number">7.</span> <span class="toc-text"> 897. E Increasing Order Search Tree 中序遍历</span></a></li></ol></div></div></div><div class="code-close" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/arkita233/CDN/img/cover/EbwdTmxVcAAWYST.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">星の彼方へ</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">二叉树</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-07-23 23:09:34 23:09:34"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-07-23 23:09:34</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-07-25 22:10:57 22:10:57"><i class="fas fa-history fa-fw"></i> 更新于 2020-07-25 22:10:57</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">778</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 4 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="遍历模板-递归"><a class="markdownIt-Anchor" href="#遍历模板-递归"></a> 遍历模板-递归</h1>
+</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/arkita233/CDN@1.3/img/cover/2.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">22</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">4</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#遍历模板-递归"><span class="toc-number">1.</span> <span class="toc-text"> 遍历模板-递归</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#938-e-range-sum-of-bst是否存在一个路径让节点之和某一值"><span class="toc-number">2.</span> <span class="toc-text"> 938 E Range Sum of BST是否存在一个路径，让节点之和&#x3D;某一值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#617-e-merge-two-binary-trees-合并两棵树-值相加"><span class="toc-number">3.</span> <span class="toc-text"> 617 E Merge Two Binary Trees 合并两棵树 - 值相加</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#700-e-search-in-a-binary-search-tree搜索值返回节点"><span class="toc-number">4.</span> <span class="toc-text"> 700  E Search in a Binary Search Tree搜索值，返回节点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#589-e-n-ary-tree-preorder-traversal-n叉树前序遍历"><span class="toc-number">5.</span> <span class="toc-text"> 589  E N-ary Tree Preorder Traversal    N叉树前序遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#递归"><span class="toc-number">5.1.</span> <span class="toc-text"> 递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stack-版"><span class="toc-number">5.2.</span> <span class="toc-text"> stack 版</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#590-e-n-ary-tree-postorder-traversal-n叉树后序遍历"><span class="toc-number">6.</span> <span class="toc-text"> 590 E N-ary Tree Postorder Traversal N叉树后序遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#递归-2"><span class="toc-number">6.1.</span> <span class="toc-text"> 递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stack-版-2"><span class="toc-number">6.2.</span> <span class="toc-text"> stack 版</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#897-e-increasing-order-search-tree-中序遍历"><span class="toc-number">7.</span> <span class="toc-text"> 897. E Increasing Order Search Tree 中序遍历</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#559-maximum-depth-of-n-ary-tree"><span class="toc-number">8.</span> <span class="toc-text"> 559. Maximum Depth of N-ary Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#递归-返回上层1遍历同层child-取max深度-递-求孩子节点深度-归-1并比较同层"><span class="toc-number">8.1.</span> <span class="toc-text"> 递归 - 返回上层+1，遍历同层child 取max深度 递-求孩子节点深度 归-+1并比较同层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遍历-用队列每层进队全pop出来一次深度每次循环pop一个时再把children入队开始下一层"><span class="toc-number">8.2.</span> <span class="toc-text"> 遍历 - 用队列，每层进队，全pop出来一次深度++，每次循环pop一个时再把children入队开始下一层</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#e-二叉树查数据是否都一样-遍历二叉树"><span class="toc-number">9.</span> <span class="toc-text"> E 二叉树查数据是否都一样 - 遍历二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#递归-dfs"><span class="toc-number">9.1.</span> <span class="toc-text"> 递归 DFS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遍历-队列-bfs"><span class="toc-number">9.2.</span> <span class="toc-text"> 遍历-队列 BFS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1022-e-sum-of-root-to-leaf-binary-numbers"><span class="toc-number">10.</span> <span class="toc-text"> 1022. E Sum of Root To Leaf Binary Numbers</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#左右翻转二叉树-e-226-invert-binary-tree"><span class="toc-number">11.</span> <span class="toc-text"> 左右翻转二叉树 E 226. Invert Binary Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#递归-3"><span class="toc-number">11.1.</span> <span class="toc-text"> 递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stack"><span class="toc-number">11.2.</span> <span class="toc-text"> stack</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#872-e-leaf-similar-trees"><span class="toc-number">12.</span> <span class="toc-text"> 872. E Leaf-Similar Trees</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dfs"><span class="toc-number">12.1.</span> <span class="toc-text"> DFS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#637-e-average-of-levels-in-binary-tree-二叉树每层平均值"><span class="toc-number">13.</span> <span class="toc-text"> 637.  E Average of Levels in Binary Tree 二叉树每层平均值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#bfs-queue"><span class="toc-number">13.1.</span> <span class="toc-text"> BFS - QUEUE</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#111-e-minimum-depth-of-binary-tree"><span class="toc-number">14.</span> <span class="toc-text"> 111. E Minimum Depth of Binary Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#bfs-每层1每层遍历到最后一个叶子的话直接return"><span class="toc-number">14.1.</span> <span class="toc-text"> BFS - 每层+1，每层遍历到最后一个叶子的话直接return</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归-4"><span class="toc-number">14.2.</span> <span class="toc-text"> 递归</span></a></li></ol></li></ol></div></div></div><div class="code-close" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/arkita233/CDN/img/cover/EbwdTmxVcAAWYST.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">星の彼方へ</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">二叉树</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-07-23 23:09:34 23:09:34"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-07-23 23:09:34</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-07-26 01:23:33 01:23:33"><i class="fas fa-history fa-fw"></i> 更新于 2020-07-26 01:23:33</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">1.6k</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 8 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="遍历模板-递归"><a class="markdownIt-Anchor" href="#遍历模板-递归"></a> 遍历模板-递归</h1>
 <pre class="highlight"><code class="C"><span class="hljs-comment">/**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -416,6 +416,252 @@ public:
         
     }
 };
+</code></pre>
+<h1 id="559-maximum-depth-of-n-ary-tree"><a class="markdownIt-Anchor" href="#559-maximum-depth-of-n-ary-tree"></a> 559. Maximum Depth of N-ary Tree</h1>
+<h2 id="递归-返回上层1遍历同层child-取max深度-递-求孩子节点深度-归-1并比较同层"><a class="markdownIt-Anchor" href="#递归-返回上层1遍历同层child-取max深度-递-求孩子节点深度-归-1并比较同层"></a> 递归 - 返回上层+1，遍历同层child 取max深度 递-求孩子节点深度 归-+1并比较同层</h2>
+<pre class="highlight"><code class="c++">    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">maxDepth</span><span class="hljs-params">(Node* root)</span> </span>{
+        
+        <span class="hljs-keyword">if</span>(!root){<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;}
+        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;
+        
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k=<span class="hljs-number">0</span>;k&lt;root-&gt;children.<span class="hljs-built_in">size</span>();k++)
+            res = <span class="hljs-built_in">max</span>(res,maxDepth(root-&gt;children[k]));
+        
+        <span class="hljs-keyword">return</span> res+<span class="hljs-number">1</span>;
+        
+    }
+
+</code></pre>
+<h2 id="遍历-用队列每层进队全pop出来一次深度每次循环pop一个时再把children入队开始下一层"><a class="markdownIt-Anchor" href="#遍历-用队列每层进队全pop出来一次深度每次循环pop一个时再把children入队开始下一层"></a> 遍历 - 用队列，每层进队，全pop出来一次深度++，每次循环pop一个时再把children入队开始下一层</h2>
+<pre class="highlight"><code class="c++"><span class="hljs-built_in">queue</span>&lt;Node*&gt; q;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">maxDepth</span><span class="hljs-params">(Node* root)</span> </span>{
+    <span class="hljs-keyword">if</span>(root == <span class="hljs-literal">NULL</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// 空节点筛除</span>
+    
+    <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;
+    q.push(root);
+    <span class="hljs-keyword">while</span>(q.<span class="hljs-built_in">size</span>()){ <span class="hljs-comment">// 当该层还有节点</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = q.<span class="hljs-built_in">size</span>(); i &gt; <span class="hljs-number">0</span>; i--){ <span class="hljs-comment">// 遍历该层所有节点</span>
+            Node* t = q.front(); <span class="hljs-comment">// 获得队列头元素</span>
+            q.pop();             <span class="hljs-comment">// 弹出队列头元素</span>
+            <span class="hljs-comment">// 向队列尾插入队列头元素所有子节点</span>
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; t-&gt;children.<span class="hljs-built_in">size</span>(); j++){
+                q.push(t-&gt;children[j]);
+            }
+        }
+        <span class="hljs-comment">// 层数++</span>
+        res++;
+    }
+    
+    <span class="hljs-keyword">return</span> res;
+}
+</code></pre>
+<h1 id="e-二叉树查数据是否都一样-遍历二叉树"><a class="markdownIt-Anchor" href="#e-二叉树查数据是否都一样-遍历二叉树"></a> E 二叉树查数据是否都一样 - 遍历二叉树</h1>
+<h2 id="递归-dfs"><a class="markdownIt-Anchor" href="#递归-dfs"></a> 递归 DFS</h2>
+<pre class="highlight"><code class="c++">    <span class="hljs-keyword">int</span> val = <span class="hljs-number">-1</span>;
+    
+    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isUnivalTree</span><span class="hljs-params">(TreeNode* root)</span> </span>{
+        
+        <span class="hljs-keyword">if</span>(!root){<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;}
+        
+        
+        <span class="hljs-keyword">if</span>(val&lt;<span class="hljs-number">0</span>){val =root-&gt;val;}
+        
+             
+
+        <span class="hljs-keyword">return</span> root-&gt;val == val &amp;&amp; isUnivalTree(root-&gt;left) &amp;&amp; isUnivalTree(root-&gt;right);
+    }
+</code></pre>
+<h2 id="遍历-队列-bfs"><a class="markdownIt-Anchor" href="#遍历-队列-bfs"></a> 遍历-队列 BFS</h2>
+<pre class="highlight"><code class="C++">    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isUnivalTree</span><span class="hljs-params">(TreeNode* root)</span> </span>{
+        
+        <span class="hljs-keyword">if</span>(!root){<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;}
+        
+        <span class="hljs-keyword">int</span> v = root-&gt;val;
+        
+        <span class="hljs-built_in">queue</span>&lt;TreeNode*&gt; s;
+        s.push(root);
+        
+        <span class="hljs-keyword">while</span>(!s.empty())
+        {
+            TreeNode* tmp = s.front();
+            s.pop();
+            
+            <span class="hljs-keyword">if</span>(tmp-&gt;val!=v)
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+            
+            <span class="hljs-keyword">if</span>(tmp-&gt;left)
+                s.push(tmp-&gt;left);
+            <span class="hljs-keyword">if</span>(tmp-&gt;right)
+                s.push(tmp-&gt;right);
+        }
+        
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+</code></pre>
+<h1 id="1022-e-sum-of-root-to-leaf-binary-numbers"><a class="markdownIt-Anchor" href="#1022-e-sum-of-root-to-leaf-binary-numbers"></a> 1022. E Sum of Root To Leaf Binary Numbers</h1>
+<pre class="highlight"><code class="c++">
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">helper</span><span class="hljs-params">(TreeNode* root, <span class="hljs-keyword">int</span> v)</span>
+    </span>{
+        <span class="hljs-keyword">if</span>(!root){<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;}
+        
+        v =v*<span class="hljs-number">2</span> + root-&gt;val;
+        
+        <span class="hljs-keyword">if</span>(root-&gt;left==<span class="hljs-literal">NULL</span> &amp;&amp; root-&gt;right==<span class="hljs-literal">NULL</span>)
+            <span class="hljs-keyword">return</span> v;
+        
+        <span class="hljs-keyword">return</span> helper(root-&gt;left,v)+helper(root-&gt;right,v);
+    }
+    
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">sumRootToLeaf</span><span class="hljs-params">(TreeNode* root)</span> </span>{
+            
+        <span class="hljs-keyword">int</span> v = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">return</span> helper(root,v);
+
+    }
+</code></pre>
+<h1 id="左右翻转二叉树-e-226-invert-binary-tree"><a class="markdownIt-Anchor" href="#左右翻转二叉树-e-226-invert-binary-tree"></a> 左右翻转二叉树 E 226. Invert Binary Tree</h1>
+<h2 id="递归-3"><a class="markdownIt-Anchor" href="#递归-3"></a> 递归</h2>
+<pre class="highlight"><code class="c++">    <span class="hljs-function">TreeNode* <span class="hljs-title">invertTree</span><span class="hljs-params">(TreeNode* root)</span> </span>{
+        
+        <span class="hljs-keyword">if</span>(!root){<span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;}
+        
+        TreeNode* tmp = root-&gt;left;
+        
+        root-&gt;left = root-&gt;right;
+        root-&gt;right = tmp;
+        
+        invertTree(root-&gt;left);
+        invertTree(root-&gt;right);
+        
+        
+        <span class="hljs-keyword">return</span> root;
+        
+        
+    }
+</code></pre>
+<h2 id="stack"><a class="markdownIt-Anchor" href="#stack"></a> stack</h2>
+<pre class="highlight"><code class="c++"><span class="hljs-function">TreeNode* <span class="hljs-title">invertTree</span><span class="hljs-params">(TreeNode* root)</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">stack</span>&lt;TreeNode*&gt; stk;
+    stk.push(root);
+    
+    <span class="hljs-keyword">while</span> (!stk.empty()) {
+        TreeNode* p = stk.top();
+        stk.pop();
+        <span class="hljs-keyword">if</span> (p) {
+            stk.push(p-&gt;left);
+            stk.push(p-&gt;right);
+            <span class="hljs-built_in">std</span>::swap(p-&gt;left, p-&gt;right);
+        }
+    }
+    <span class="hljs-keyword">return</span> root;
+}
+</code></pre>
+<h1 id="872-e-leaf-similar-trees"><a class="markdownIt-Anchor" href="#872-e-leaf-similar-trees"></a> 872. E Leaf-Similar Trees</h1>
+<h2 id="dfs"><a class="markdownIt-Anchor" href="#dfs"></a> DFS</h2>
+<pre class="highlight"><code class="c++">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">helper</span><span class="hljs-params">(TreeNode* root, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; v)</span>
+    </span>{
+        <span class="hljs-keyword">if</span>(!root){<span class="hljs-keyword">return</span>;}
+        
+        <span class="hljs-keyword">if</span>(root-&gt;left==<span class="hljs-literal">NULL</span> &amp;&amp; root-&gt;right==<span class="hljs-literal">NULL</span>){v.push_back(root-&gt;val);}
+        
+        helper(root-&gt;left,v);
+        
+        helper(root-&gt;right,v);
+    }
+    
+    
+    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">leafSimilar</span><span class="hljs-params">(TreeNode* root1, TreeNode* root2)</span> </span>{
+        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v1;
+        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v2;
+        
+        helper(root1,v1);
+        
+        helper(root2,v2);
+  
+
+        <span class="hljs-keyword">return</span> v1==v2?<span class="hljs-number">1</span>:<span class="hljs-number">0</span>;
+    }
+</code></pre>
+<h1 id="637-e-average-of-levels-in-binary-tree-二叉树每层平均值"><a class="markdownIt-Anchor" href="#637-e-average-of-levels-in-binary-tree-二叉树每层平均值"></a> 637.  E Average of Levels in Binary Tree 二叉树每层平均值</h1>
+<h2 id="bfs-queue"><a class="markdownIt-Anchor" href="#bfs-queue"></a> BFS - QUEUE</h2>
+<pre class="highlight"><code class="c++">    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">double</span>&gt; <span class="hljs-title">averageOfLevels</span><span class="hljs-params">(TreeNode* root)</span> </span>{
+        
+        <span class="hljs-keyword">if</span>(!root){<span class="hljs-keyword">return</span> <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">double</span>&gt;();}
+        
+        <span class="hljs-built_in">queue</span>&lt;TreeNode*&gt; q; 
+        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">double</span>&gt; res;
+        
+        q.push(root);
+  
+        <span class="hljs-keyword">while</span>(!q.empty())
+        {
+            <span class="hljs-keyword">double</span> sum = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">int</span> s = q.<span class="hljs-built_in">size</span>();
+            
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;s;i++)
+            {
+                TreeNode* tmp = q.front();
+                q.pop();
+                
+                <span class="hljs-keyword">if</span>(tmp)
+                    sum+=tmp-&gt;val;
+                
+                <span class="hljs-keyword">if</span>(tmp-&gt;left)
+                    q.push(tmp-&gt;left);
+                <span class="hljs-keyword">if</span>(tmp-&gt;right)
+                    q.push(tmp-&gt;right);
+            }
+            
+            
+            
+            res.push_back(sum/s);
+        }
+        
+        <span class="hljs-keyword">return</span> res;
+    }
+</code></pre>
+<h1 id="111-e-minimum-depth-of-binary-tree"><a class="markdownIt-Anchor" href="#111-e-minimum-depth-of-binary-tree"></a> 111. E Minimum Depth of Binary Tree</h1>
+<h2 id="bfs-每层1每层遍历到最后一个叶子的话直接return"><a class="markdownIt-Anchor" href="#bfs-每层1每层遍历到最后一个叶子的话直接return"></a> BFS - 每层+1，每层遍历到最后一个叶子的话直接return</h2>
+<pre class="highlight"><code class="c++">    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">minDepth</span><span class="hljs-params">(TreeNode* root)</span> </span>{
+        
+        <span class="hljs-keyword">if</span>(!root){<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;}
+        
+        <span class="hljs-built_in">queue</span>&lt;TreeNode*&gt; q;
+        <span class="hljs-keyword">int</span> d = <span class="hljs-number">1</span>;
+        
+        q.push(root);
+        
+        <span class="hljs-keyword">while</span>(!q.empty())
+        {
+
+            <span class="hljs-keyword">int</span> s = q.<span class="hljs-built_in">size</span>();
+            
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;s;i++)
+            {
+                TreeNode* tmp = q.front();
+                q.pop();
+                
+                <span class="hljs-keyword">if</span>(tmp-&gt;left==<span class="hljs-literal">NULL</span> &amp;&amp; tmp-&gt;right==<span class="hljs-literal">NULL</span>)
+                    <span class="hljs-keyword">return</span> d;
+                
+                <span class="hljs-keyword">if</span>(tmp-&gt;left)
+                    q.push(tmp-&gt;left);
+                <span class="hljs-keyword">if</span>(tmp-&gt;right)
+                    q.push(tmp-&gt;right);
+            }
+            
+            d++;
+        }
+        
+        <span class="hljs-keyword">return</span> d;
+    }
+</code></pre>
+<h2 id="递归-4"><a class="markdownIt-Anchor" href="#递归-4"></a> 递归</h2>
+<pre class="highlight"><code class="c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">minDepth</span><span class="hljs-params">(TreeNode* root)</span> </span>{
+    <span class="hljs-keyword">if</span> (!root) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">int</span> L = minDepth(root-&gt;left), R = minDepth(root-&gt;right);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span> + (<span class="hljs-built_in">min</span>(L, R) ? <span class="hljs-built_in">min</span>(L, R) : <span class="hljs-built_in">max</span>(L, R));
+}
 </code></pre>
 </div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:sixiang.zhang@tufts.edu">アムネシア</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://hosimati-kanata.com/post/2a0c.html">https://hosimati-kanata.com/post/2a0c.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://hosimati-kanata.com" target="_blank">星の彼方へ</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f05f413115d290b" async="async"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/9c3e.html"><img class="prev-cover" data-src="https://cdn.jsdelivr.net/gh/arkita233/CDN/img/cover/EbwdTmxVcAAWYST.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">链表刷题</div></div></a></div><div class="next-post pull-right"><a href="/post/7ffe.html"><img class="next-cover" data-src="https://cdn.jsdelivr.net/gh/arkita233/CDN/img/cover/EbwdTmxVcAAWYST.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">数组</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/post/a109.html" title="LinkedList c++"><img class="relatedPosts_cover" data-src="https://cdn.jsdelivr.net/gh/arkita233/CDN/img/cover/EbwdTmxVcAAWYST.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-21 23:21:40</div><div class="relatedPosts_title">LinkedList c++</div></div></a></div><div class="relatedPosts_item"><a href="/post/558a.html" title="判断链表是否有环，交汇- 双指针技巧"><img class="relatedPosts_cover" data-src="https://cdn.jsdelivr.net/gh/arkita233/CDN/img/cover/EbwdTmxVcAAWYST.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-21 23:47:18</div><div class="relatedPosts_title">判断链表是否有环，交汇- 双指针技巧</div></div></a></div><div class="relatedPosts_item"><a href="/post/e808.html" title="反转链表，移除元素等经典问题"><img class="relatedPosts_cover" data-src="https://cdn.jsdelivr.net/gh/arkita233/CDN/img/cover/EbwdTmxVcAAWYST.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-22 02:29:55</div><div class="relatedPosts_title">反转链表，移除元素等经典问题</div></div></a></div><div class="relatedPosts_item"><a href="/post/95da.html" title="递归 - 递进分解，回归合并"><img class="relatedPosts_cover" data-src="https://cdn.jsdelivr.net/gh/arkita233/CDN/img/cover/EbwdTmxVcAAWYST.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-22 21:27:46</div><div class="relatedPosts_title">递归 - 递进分解，回归合并</div></div></a></div><div class="relatedPosts_item"><a href="/post/7ffe.html" title="数组"><img class="relatedPosts_cover" data-src="https://cdn.jsdelivr.net/gh/arkita233/CDN/img/cover/EbwdTmxVcAAWYST.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-23 19:19:25</div><div class="relatedPosts_title">数组</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="lv-container" data-id="city" data-uid="MTAyMC81MDk0OS8yNzQzMQ=="><script>(function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
